@@ -14,9 +14,21 @@
 
         <!--v-bind é utilizado para que o vue modifique as propriedades -->
         <img v-bind:src="product.image" v-bind:alt="product.title" style="max-width: 100px;">
-        
+
+        <!-- v-if não renderiza tag se a condicional não for aceita -->
+        <strong v-if="product.stars > 0">{{ product.stars}}</strong>
+
         <!-- pode ser usar o ':' para representar o v-bind -->
         <img :src="product2.image" :alt="product.title" style="max-width: 100px;">
+        
+        <!-- v-show apenas oculta (display:none) se a condicional não for aceita -->
+        <strong v-show="product2.stars > 0">{{ product2.stars}}</strong>
+
+
+        <!-- abaixo condicional completa no vue -->
+        <!-- <div v-if="number == 2"></div>
+        <div v-else-if="number == 3"></div>
+        <div v-else></div> -->
 
     </div>
 
